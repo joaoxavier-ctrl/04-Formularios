@@ -114,8 +114,8 @@ const App = () => {
         value={form.estado} 
         onChange={handleChange}
       />
-      <button>Enviar</button>
       {response && response.ok && <p>Usuário Criado</p>}
+      <button>Enviar</button>
     </form>
   );
 };
