@@ -54,7 +54,10 @@ label {
   margin-bottom: 0.25rem;
 }
 
-input,
+input{
+  display: inline;
+}
+
 textarea {
   display: block;
   border: 1px solid #ccc;
