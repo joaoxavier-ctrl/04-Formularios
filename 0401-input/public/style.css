@@ -57,6 +57,12 @@ label {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="cep"],
+input[type="rua"],
+input[type="numero"],
+input[type="bairro"],
+input[type="cidade"],
+input[type="estado"],
 textarea {
   display: block;
   border: 1px solid #ccc;
@@ -71,6 +77,12 @@ textarea {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
+input[type="cep"]:focus,
+input[type="rua"]:focus,
+input[type="numero"]:focus,
+input[type="bairro"]:focus,
+input[type="cidade"]:focus,
+input[type="estado"]:focus,
 textarea:focus {
   outline: none;
   border-color: var(--color);
