@@ -1,7 +1,34 @@
 import React from 'react';
 
 const App = () => {
-  return <div>App reacts</div>;
-}
+  const [produto, setProduto] = React.useState('');
 
-export default App
+  function handleChange({target}){
+    setProduto(target.value);
+  }
+
+
+  return (
+    <form>
+      {produto}
+      <label>
+        <input 
+          type="radio" 
+          onChange={handleChange}
+          checked={produto === 'smartphone'}
+          value="smartphone" />
+        Smartphone
+      </label>
+      <label>
+        <input 
+        type="radio" 
+        onChange={handleChange}
+        checked={produto === 'notebook'}
+        value="notebook" />
+        Notebook
+      </label>
+    </form>
+  );
+};
+
+export default App;
