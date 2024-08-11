@@ -50,8 +50,15 @@ li {
 }
 
 label {
-  display: block;
+  display: flex;
+  align-content: start;
   margin-bottom: 0.25rem;
+}
+
+input[type="radio"]{
+  border: 1px solid blue;
+  margin: 2px;
+  width: fit-content;
 }
 
 input,
