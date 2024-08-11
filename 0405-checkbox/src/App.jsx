@@ -1,44 +1,42 @@
 import React from 'react';
 
-const App = () => {
-  const [termos, setTermos] = React.useState(false);
-  const [cores, setCores] = React.useState([]);
+// Otimize o código do slide anterior
+// Utilizando a array abaixo para mostrar
+// cada checkbox na tela.
 
-  function handleChange({target}){
-    setCores([...cores, target.value])
+const App = () => {
+  const [cores, setCores] = React.useState([]);
+  const coresArray = ['azul', 'roxo', 'laranja', 'verde', 'vermelho', 'cinza'];
+
+
+  function handleChange({ target }) {
+    if (target.checked) {
+      setCores([...cores, target.value]);
+    } else {
+      setCores(cores.filter((cor) => cor !== target.value));
+    }
+  }
+
+  function handleChecked(cor) {
+    return cores.includes(cor);
   }
 
   return (
-    <form>
-      <label>
+   <form>
+      {coresArray.map((cor) => (
+        <label key={cor} style={{ textTransform: 'capitalize'}}>
         <input 
-          type="checkbox" 
-          value="Termos" 
-          checked={termos} 
-          onChange={({target}) => setTermos(target.checked)}
-          />
-        Aceito os termos.
-      </label>*/
-      <label>
-        <input 
-          type="checkbox" 
-          value="Termos" 
-          //checked={termos} 
+          type="checkbox"
+          value={cor}
+          checked={handleChecked(cor)}
           onChange={handleChange}
-          />
-        Azul
+        />
+        {cor}
       </label>
-      <label>
-        <input 
-          type="checkbox" 
-          value="Termos" 
-          //checked={termos} 
-          onChange={handleChange}
-          />
-        Vermelho
-      </label>
-    </form>
-  )
-}
+      ))}
+   </form>
+  );
+};
+
 
 export default App
